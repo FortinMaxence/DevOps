@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goodbye
+  labels:
+    app: goodbye
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goodbye
+  template:
+    metadata:
+      labels:
+        app: goodbye
+    spec:
+      containers:
+      - name: goodbye
+        image: goodbye
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
